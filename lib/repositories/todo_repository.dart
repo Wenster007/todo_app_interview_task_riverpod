@@ -8,6 +8,13 @@ final sharedPreferencesProvider = Provider<SharedPreferences>((ref) {
   throw UnimplementedError();
 });
 
+// Provider for TodoRepository
+final todoRepositoryProvider = Provider<ITodoRepository>((ref) {
+  final prefs = ref.watch(sharedPreferencesProvider);
+  return TodoRepository(prefs);
+});
+
+
 // Abstract class following Interface Segregation Principle
 abstract class ITodoRepository {
   Future<List<Todo>> getTodos();
@@ -81,8 +88,3 @@ class TodoRepository implements ITodoRepository {
   }
 }
 
-// Provider for TodoRepository
-final todoRepositoryProvider = Provider<ITodoRepository>((ref) {
-  final prefs = ref.watch(sharedPreferencesProvider);
-  return TodoRepository(prefs);
-});
