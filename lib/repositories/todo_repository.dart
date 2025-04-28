@@ -1,18 +1,6 @@
 import 'dart:convert';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:todo_list_job_test/model/todo.dart';
-
-// Provider for SharedPreferences
-final sharedPreferencesProvider = Provider<SharedPreferences>((ref) {
-  throw UnimplementedError();
-});
-
-// Provider for TodoRepository
-final todoRepositoryProvider = Provider<ITodoRepository>((ref) {
-  final prefs = ref.watch(sharedPreferencesProvider);
-  return TodoRepository(prefs);
-});
 
 
 // Abstract class following Interface Segregation Principle

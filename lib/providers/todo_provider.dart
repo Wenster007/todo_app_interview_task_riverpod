@@ -119,8 +119,3 @@ class TodoNotifier extends StateNotifier<TodoState> {
   }
 }
 
-//provider
-final todoProvider = StateNotifierProvider<TodoNotifier, TodoState>((ref) {
-  final repository = ref.watch(todoRepositoryProvider);
-  return TodoNotifier(repository);
-});

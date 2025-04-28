@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:todo_list_job_test/model/todo.dart';
-import 'package:todo_list_job_test/providers/todo_provider.dart';
+import 'package:todo_list_job_test/providers/app_providers.dart';
 
 
 class TodoFormScreen extends ConsumerStatefulWidget {
